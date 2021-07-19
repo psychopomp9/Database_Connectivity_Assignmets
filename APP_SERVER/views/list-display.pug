@@ -5,14 +5,19 @@ block content
     .col-12 
       h1= title 
         small &nbsp;
+  .row 
+    .col-12.col-md-8 
+      .p
+        a(href='/new') Add Missing Manga
 
   .row
     .col-12.col-md-8
       each manga in mangas 
-        .card
-          .card-block
-            h4= manga.title
-            small &nbsp;
-            h5=manga.author 
-            h6 price: #{manga.price}
-            h6 Released year: #{manga.publication_year}
+        a(href=`/list/${manga._id}`)
+          .card
+            .card-block
+              h4= manga.title
+              small &nbsp;
+              h5=manga.author 
+              h6 price: ￥#{manga.price} 
+              h6 Released year: #{manga.publication_year}

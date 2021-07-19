@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const manga = mongoose.model('Manga');
 
 const getManga = (req, res) => {
-    managa.find().exec((err , mangadata) =>{
+    manga.find().exec((err , mangadata) =>{
         if(err){
             res.status(404).json(err);
             return;

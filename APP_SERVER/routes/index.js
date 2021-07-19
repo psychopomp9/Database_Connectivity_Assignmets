@@ -14,4 +14,12 @@ router.get('/about', ctrlAbout.about);
 // list page
 router.get('/list', ctrlListData.listData);
 
+// Details page
+router.get('/list/:mangaid', ctrlListData.mangaInfo);
+
+// create new entry page 
+router.route('/new')
+    .get(ctrlListData.addNewManga) 
+    .post(ctrlListData.doAddNewManga);
+
 module.exports = router;
