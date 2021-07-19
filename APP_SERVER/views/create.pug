@@ -1,0 +1,36 @@
+extends layout
+
+block content
+    .row.banner
+        .col-12 
+        h1= title
+            small &nbsp;
+    .row
+        form(role='form' action='' method='POST')
+            .row 
+                .col-12.col-md-4
+                    label(for='title') Title:
+                .col-12.col-md-8
+                    input(type='text' name='title') 
+                .col-12.col-md-4
+                    label(for='author') Author:
+                .col-12.col-md-8
+                    input(type='text' name='author')
+                .col-12.col-md-4
+                    label(for='description') Description:
+                .col-12.col-md-8
+                    textarea(rows='5' cols='60' name='description')
+                .col-12.col-md-4
+                    label(for='price') Price:
+                .col-12.col-md-8
+                    input(type='number' name='price')
+                .col-12.col-md-4
+                    label(for='publication_year') Publication Date:
+                .col-12.col-md-8
+                    input(type='date' name='publication_year')
+                    br
+                    br
+                    br
+                .col-12.col-md-4
+                .col-12.col-md-4
+                    button(type='submit') Submit

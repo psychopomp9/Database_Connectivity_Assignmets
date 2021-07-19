@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const dbURI = 'mongodb+srv://bhargav4110:bhargav4110@cluster0.oxvzz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 
 mongoose.connect(dbURI, {
-    dbName: 'managDB',
+    dbName: 'mangaDB',
     userNewUrlParser: true,
     userUnifiedTopology: true
 });
