@@ -1,0 +1,18 @@
+<nav class="navbar fixed-top navbar-expand-md navbar-light">
+    <div class="container"> 
+        <a class="navbar-brand" routerLink="">Manga-Planet</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMain">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse" id="navbarMain">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item"> <a class="nav-link" routerLink="about">About</a></li>
+                <li class="nav-item"> <a class="nav-link" routerLink="list">List</a></li>
+                <li class="nav-item"> <a class="nav-link" routerLink="new">Create</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container content">
+    <router-outlet></router-outlet>
+</div>

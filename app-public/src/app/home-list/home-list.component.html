@@ -1,0 +1,25 @@
+<app-header [content]="pageContent.header"></app-header>
+<div class="row">
+    <div class="col-12 col-md-8">
+        <div class="p">
+            <a routerLink="/new">{{ pageContent.body }}</a>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12 col-md-8" *ngFor="let manga of mangas;">
+            <div class="card">
+                <div class="card-block">
+                    <a routerLink="/list/{{manga._id}}">
+                        <h4>{{ manga.title }}</h4>
+                    </a>
+                    <small>&nbsp;</small>
+                    <h5>{{ manga.author }}</h5>
+                    <h6>price: ￥{{ manga.price }}</h6>
+                    <h6>Released year: {{ manga.publication_year }}</h6>
+                </div>
+            </div>
+        
+    </div>
+</div>
