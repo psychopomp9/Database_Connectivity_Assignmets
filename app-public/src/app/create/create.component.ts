@@ -15,7 +15,8 @@ export class CreateComponent implements OnInit {
     author: '',
     description: '',
     price: 0,
-    publication_year: null
+    publication_year: null,
+    reviews: null
   };
 
   constructor(private mangaService: MangaServiceService) { }
