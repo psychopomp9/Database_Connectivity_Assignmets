@@ -3,6 +3,7 @@ import { Manga } from '../manga';
 import { MangaServiceService } from '../manga-service.service';
 import { switchMap } from 'rxjs/operators';
 import { ActivatedRoute, Params } from '@angular/router';
+// import { Moment } from 'moment';
 
 
 @Component({
@@ -24,7 +25,8 @@ export class DetailsPageComponent implements OnInit {
       author: '',
       description: '',
       price: 0,
-      publication_year: null
+      publication_year: null,
+      reviews: null
     },
     id: ''
   }
@@ -34,7 +36,12 @@ export class DetailsPageComponent implements OnInit {
       return this.mangaService.getSingleManga(params.mangaid);
     }))
       .subscribe((newManga: Manga) => {
-        console.log('Selected Manga', newManga);
+        // console.log('Selected Manga', newManga);
+        //  let date = newManga.publication_year;
+        // var moment = require('moment');
+        // let month = moment(date).format('YYYY-MM-DD');
+        // console.log(month);
+        
         this.newManga = newManga;
         this.pageContent.header.title = newManga.title;
         this.pageContent.body.author = newManga.author;
@@ -42,6 +49,7 @@ export class DetailsPageComponent implements OnInit {
         this.pageContent.body.price = newManga.price;
         this.pageContent.body.publication_year = newManga.publication_year;
         this.pageContent.id = newManga._id;
+        this.pageContent.body.reviews = newManga.reviews;
       });
   }
 
@@ -49,5 +57,14 @@ export class DetailsPageComponent implements OnInit {
 
   public deleteThisManga(mangaId: string): void{
     this.mangaService.deleteManga(mangaId);
+  }
+
+  public updateThisManga(newManga: Manga): void{
+    this.mangaService.updatedManga(newManga._id, newManga);
+  }
+
+  public toggleFunc(){
+    var tForm = document.getElementById("more");
+    (tForm.style.display == "none") ? tForm.style.display = "block" : tForm.style.display = "none";
   }
 }

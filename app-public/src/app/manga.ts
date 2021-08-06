@@ -7,4 +7,11 @@ export class Manga {
     description: string;
     price: number;
     publication_year: Date;
+    reviews: Review[];
+}
+
+class Review {
+    reviewer: string;
+    reviewText: string;
+    rating: number;
 }
